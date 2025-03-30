@@ -12,7 +12,7 @@ struct consumable {
         value = val;
     }
 
-    short value;
+    int32_t value;
     bool consumed;
 };
 
