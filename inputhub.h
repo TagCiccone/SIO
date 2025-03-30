@@ -3,12 +3,13 @@
 #include <vector>
 #include <utility>
 #include <map>
-#include <iostream>
 
 #include <linux/input.h>
 #include <fcntl.h>
 
 #include <unistd.h>
+
+#include "common.h"
 
 int UNIVERSAL_THREAD_KILL = 0;
 
@@ -52,20 +53,6 @@ enum AXIS_CODE {
     R_STICK_HORIZONTAL = 4
 };
 
-struct consumable {
-    consumable(): value(0), consumed(1) {};
-
-    void set(int val) {
-        consumed = value != val;
-
-        std::cout << "setting to " << val << std::endl;
-
-        value = val;
-    }
-
-    short value;
-    bool consumed;
-};
 
 typedef std::pair<int, int> identifier;
 
@@ -126,6 +113,9 @@ class InputHub { // TODO make this a singleton
 
         void makeReadThread(std::string event, CONTROLLER_TYPE controllerType);
 
+        consumable *getConsumable(int type, int code) {
+            return &(states[0].inputs.find(identifier(type,code))->second);
+        }
 
     private:
         std::vector<std::pair<std::string, std::thread>> events;
