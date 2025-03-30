@@ -113,7 +113,7 @@ class InputHub { // TODO make this a singleton
 
         void makeReadThread(std::string event, CONTROLLER_TYPE controllerType);
 
-        consumable *getConsumable(int type, int code) {
+        consumable* getConsumable(int type, int code) {
             return &(states[0].inputs.find(identifier(type,code))->second);
         }
 
