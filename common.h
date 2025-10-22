@@ -5,7 +5,7 @@
 #include <functional>
 
 struct consumable {
-    consumable(): value(0), consumed(0) {};
+    consumable(): value(0), consumed(1) {};
 
     void set(int val) {
         consumed = consumed && (value == val);
