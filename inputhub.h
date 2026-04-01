@@ -10,6 +10,7 @@
 #include <unistd.h>
 
 #include "common.h"
+#include "xboxcontroller.h"
 
 int UNIVERSAL_THREAD_KILL = 0;
 
@@ -58,7 +59,7 @@ void eventReadLoop(std::string event, ControllerState *state) {
 
 void InputHub::makeReadThread(std::string event, CONTROLLER_TYPE controllerType) {
     if (controllerType == XBOX) {
-        states.push_back(XboxControllerState());
+        states.push_back(xbox::XboxControllerState());
     } // TODO have more/generify
 
     // XboxControllerState s;

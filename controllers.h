@@ -14,3 +14,8 @@ namespace controller {
 struct ControllerState {
     std::map<identifier, consumable> inputs;
 };
+
+enum CONTROLLER_TYPE {
+    XBOX,
+
+};
