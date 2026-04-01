@@ -17,5 +17,6 @@ struct consumable {
 };
 
 typedef std::pair <consumable*, std::function<void(int)> > action;
+typedef std::pair<int, int> identifier;
 
 #endif

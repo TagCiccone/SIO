@@ -66,5 +66,6 @@
         "string_view": "cpp",
         "numbers": "cpp",
         "semaphore": "cpp"
-    }
+    },
+    "C_Cpp.errorSquiggles": "enabled"
 }
