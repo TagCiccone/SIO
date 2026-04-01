@@ -14,7 +14,7 @@ int main() {
 
     ohub.addAction(
         action(
-            ihub.getConsumable(1, Xb),
+            ihub.getConsumable(controller::BUTTON, xbox::A),
             foo
         )
     );
