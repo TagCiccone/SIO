@@ -2,7 +2,7 @@
 
 namespace xbox
 {
-    const axis_input_threshold = 0.025;
+    const int axis_input_threshold = 0.025;
 
     enum INPUT_CODE {
         A = 304,
