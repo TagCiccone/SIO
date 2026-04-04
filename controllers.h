@@ -17,5 +17,4 @@ struct ControllerState {
 
 enum CONTROLLER_TYPE {
     XBOX,
-
 };
